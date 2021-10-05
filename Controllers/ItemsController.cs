@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Catalog.DTO;
 using Catalog.Entities;
 using Catalog.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -23,9 +25,15 @@ namespace Catalog.Controller
 
     // GET /items
     [HttpGet]
-    public IEnumerable<Item> GetItems()
+    public IEnumerable<ItemDTO> GetItems()
     {
-      var items = repository.GetItems();
+      var items = repository.GetItems().Select( item => new ItemDTO
+      {
+        Id = item.Id,
+        Name = item.Name,
+        Price = item.Price,
+        CreatedDate = item.CreatedDate 
+      });
       return items;
     }
 
