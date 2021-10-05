@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "iM6SccAoVGOW3Z0XtkL+6Gz5DVuNlwBsLogvzUJ6m4zc/26fm1Vvso9S+n+BWtRCs4WpJdOyf9kslob0+lW3EQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\APruitt\\source\\repos\\Catalog\\Catalog.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\APruitt\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\APruitt\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\APruitt\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\APruitt\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\APruitt\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\APruitt\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
