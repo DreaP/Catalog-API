@@ -45,6 +45,7 @@ namespace Catalog.Controller
       return item.AsDTO();
     }
 
+    //Post /items
     [HttpPost]
     public ActionResult<ItemDTO> CreateItem(CreateItemDTO itemDTO)
     {
@@ -59,6 +60,43 @@ namespace Catalog.Controller
        repository.CreateItem(item);
 
        return CreatedAtRoute(nameof(GetItem), new {id = item.Id}, item.AsDTO());
+    }
+
+    // PUT /items/id
+    [HttpPut("{id}")]
+    public ActionResult UpdateItem(Guid id, UpdateItemDTO itemDTO)
+    {
+      var exsistingItem = repository.GetItem(id);
+
+      if(exsistingItem is null)
+      {
+        return NotFound();
+      }
+
+      Item updatedItem = exsistingItem with
+      {
+        Name = itemDTO.Name,
+        Price = itemDTO.Price
+      };
+
+      repository.UpdateItem(updatedItem);
+      return NoContent();
+    }
+
+    // Delete /items/id
+    [HttpDelete("{id}")]
+    public ActionResult DeleteItem(Guid id)
+    {
+       var exsistingItem = repository.GetItem(id);
+
+      if(exsistingItem is null)
+      {
+        return NotFound();
+      }
+
+      repository.DeleteItem(id);
+
+      return NoContent();
     }
   }
 }
