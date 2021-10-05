@@ -27,19 +27,13 @@ namespace Catalog.Controller
     [HttpGet]
     public IEnumerable<ItemDTO> GetItems()
     {
-      var items = repository.GetItems().Select( item => new ItemDTO
-      {
-        Id = item.Id,
-        Name = item.Name,
-        Price = item.Price,
-        CreatedDate = item.CreatedDate 
-      });
+      var items = repository.GetItems().Select( item => item.AsDTO());
       return items;
     }
 
     // GET /items/id
     [HttpGet("{id}")]
-    public ActionResult<Item> GetItem(Guid id)
+    public ActionResult<ItemDTO> GetItem(Guid id)
     {
       var item = repository.GetItem(id);
 
@@ -48,7 +42,7 @@ namespace Catalog.Controller
         return NotFound();
       }
 
-      return Ok(item);
+      return item.AsDTO();
     }
   }
 }
